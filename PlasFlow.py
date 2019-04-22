@@ -92,6 +92,7 @@ print("Importing sequences")
 # read data to classify and quanitify kmers
 input_data = r.readDNAStringSet(inputfile)
 no_sequences = r.length(input_data)[0]
+assert no_sequences > 0, 'No sequences were found in the input file {}'.format(inputfile)
 print("Imported ", no_sequences, " sequences")
 # get accessions of files
 accessions = r.sub("(\S*)\s.*", "\\1", r.names(input_data), perl=True)
